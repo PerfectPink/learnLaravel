@@ -1,0 +1,80 @@
+body{
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+nav{
+    display: flex;
+    flex-direction: row;
+
+}
+.wrapper{
+    max-width: 1280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.newsBlock{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 12px;
+}
+.newsItem{
+    border: 2px solid rgb(101, 101, 101);
+    border-radius: .5em;
+    box-sizing: border-box;
+    flex-basis: 40%;
+    padding: 2em 1em;
+    width: 100%;
+    height: 100%;
+    max-width: 640px;
+    max-height: 800px;
+    background-color: rgb(196, 194, 194);
+
+
+}
+/* .newsItemStats{
+    display: flex;
+    flex-direction: row;
+} */
+.newsTitle{
+    font-weight: bold;
+    font-size: 26px;
+}
+/* Stat Icons classes */
+.newsViews{
+    background-image: url(../img/view.png);
+}
+.newsLikes{
+    background-image: url(../img/like.png);
+}
+.newsLikesActive{
+    background-image: url(../img/like_active.png);
+}
+.newsDislikes{
+    background-image: url(../img/dislike.png);
+}
+.newsDislikesActive{
+    background-image: url(../img/dislike_active.png);
+}
+
+/* universal classes */
+.colorgrey{
+    color: gray;
+}
+.newsItemStat{
+    width: 25px;
+    height: 25px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.flexrow{
+    display: flex;
+    flex-direction: row;
+    gap: 2px;
+}
