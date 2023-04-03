@@ -1,0 +1,32 @@
+-- Adminer 4.8.1 MySQL 5.5.5-10.6.12-MariaDB dump
+
+SET NAMES utf8;
+SET time_zone = '+00:00';
+SET foreign_key_checks = 0;
+SET sql_mode = 'NO_AUTO_VALUE_ON_ZERO';
+
+SET NAMES utf8mb4;
+
+DROP TABLE IF EXISTS `news`;
+CREATE TABLE `news` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `category` varchar(64) NOT NULL,
+  `title` varchar(512) NOT NULL,
+  `image` mediumblob NOT NULL,
+  `description` text NOT NULL,
+  `likes` int(16) NOT NULL DEFAULT 0,
+  `views` int(16) NOT NULL DEFAULT 0,
+  `dislikes` int(16) NOT NULL DEFAULT 0,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+INSERT INTO `news` (`id`, `category`, `title`, `image`, `description`, `likes`, `views`, `dislikes`) VALUES
+(1,	'books',	'new book',	'',	'released new book \"new book\"',	0,	0,	0),
+(2,	'books',	'announced new book from \"new book\" series',	'',	'author of new book and father of \"new book\" series announced new book from \"new book\" series',	0,	0,	0),
+(3,	'films',	'film news title',	'',	'film news desc',	0,	0,	0),
+(4,	'games',	'new game rarcraft',	'',	'new game rarcraft is released for pc',	0,	0,	0),
+(5,	'finances',	'announced dollar 2',	'',	'USA government announced dollar 2, President says \"this shit is bussing\"',	0,	0,	0),
+(6,	'finances',	'China’s Premier Li Qiang seeks to rally Asia behind Beijing',	'',	'BO’AO, China — Chinese Premier Li Qiang sought to rally Asian countries behind China in his first public address to an international audience as premier.\r\n\r\nOn Wednesday, Li claimed that China had acted “responsibly” in its role as a big country, and generally contributed to world peace.\r\n“Peace is the prerequisite for development,” Li said in Mandarin translated by CNBC.\r\n\r\nHis speech of about 25 minutes at the Boao Forum for Asia did not delve into China’s heightened tensions with the U.S.\r\n\r\nThe annual meeting, hosted by China, is seen by some as the region’s answer to the World Economic Forum’s gathering of global leaders every year in Davos, Switzerland.\r\n\r\nAsia and the world are at the “crossroads” of history, Li said, while portraying China as a center of stability.\r\n\r\nHe referenced China’s ruling Communist Party’s congressional meeting in the fall, and its goal of “national rejuvenation” claiming the country’s “great contributions” to the world were “rapid economic growth” and “social stability.”\r\n\r\nLi, who was confirmed as premier in March, said China’s development going forward would bring “strong momentum to the economic growth of Asia.”',	0,	0,	0),
+(7,	'games',	'WoW: Wrath Of The Lich King Classic Bug That Went Unnoticed For 14 Years Finally Fixed',	'',	'One of World of Warcraft: Wrath of the Lich King Classic\'s most powerful weapons has been more powerful than intended for 14 years, all thanks to a simple typo that went unnoticed by both Blizzard and players back when the weapon first debuted back in 2009.\r\n\r\nThe weapon in question is the Legendary healing mace Val\'anyr, Hammer of Ancient Kings, which can be acquired by gathering fragments from the expansion\'s iconic Ulduar raid and completing subsequent quests. What makes the weapon so powerful is its special effect tailor made for healers. When using Val\'anyr, heals have a chance to activate a shield on their respective targets that can absorb up to 15% of the amount healed. Ulduar released back in 2009 originally, and arrived in Wrath of the Lich King Classic on January 19, 2023.\r\nThat makes it an incredibly powerful weapon for tank healing, but as Blizzard notes in a March 27 hotfix, the weapon\'s special effect was actually stronger than originally intended due to a nearly 15-year-old typo. The shield granted by the weapon was always intended to cap out at 20,000, but an extra \"0\" in the weapon\'s spell script actually made that amount 200,000. That\'s a big difference.\r\n\r\n\"The absorb shield from Val\'anyr was always intended to have a cap of 20,000 health, but there was a typo in the spell script in original Wrath of the Lich King version 3.3.5,\" Blizzard\'s hotfix reads. \"The script was set the absorb amount to 200,000! This was never noticed by players in original Wrath.\"\r\n\r\nNow, the reason this bug looks to have largely gone unnoticed for so long is likely due to the fact that the number of players who actually ever acquired Val\'anyr back in the day is relatively small. Ulduar was a punishingly difficult raid when it debuted, and the long process of acquiring Val\'anyr made it so only the most dedicated players that were members of the best guilds had the chance to wield it. The final quest to obtain the weapon requires players to toss the fragments of Val\'anyr into the mouth of the final boss, Yogg-saron, at a specific moment and then defeat it.\r\n\r\nThere\'s also the fact that the few players who did originally obtain the weapon likely never even approached the unintentional 200,000 shield cap, due to the fact that the shield is based on 15% of healing received. However, players completing Ulduar in 2023 have much more experience (and online guides and resources) to help min-max their characters, meaning more players are likely using Val\'anyr now than back in 2009. It also means that the shields granted due to the weapon\'s effect are much more likely today to surpass the intended cap of 20,000 than in 2009, making the already powerful weapon extra potent and finally catching Blizzard\'s eye.\r\n\r\nWrath of the Lich King Classic released in September 2022, introducing the Death Knight to the old-school version of Blizzard\'s MMO. Since then Blizzard has introduced a number of changes to the game\'s most popular expansion, including the addition of a new dungeon difficulty and the ability for players to create one Death Knight character free of the expansion\'s original restrictions. Blizzard recently reverted that particular change, once again making it harder to create Death Knights in order to deter bots and bad actors from being able to take advantage of easily making a level 55 character.',	0,	6,	0);
+
+-- 2023-04-01 15:14:00
