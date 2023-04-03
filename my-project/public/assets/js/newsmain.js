@@ -1,5 +1,6 @@
 let workplace = document.getElementById('newsworkplace');
 let newsItemTmpl = document.getElementById('newsItem-tmpl');
+let singleNewsTmpl = document.getElementById('singleNewView-tmpl');
 // let newsFullItemTmpl = documen.getElementById('');
 let retryQuanity = 0;
 
@@ -32,12 +33,37 @@ function renderNews(specificType){
 }
 function renderSingleNews(targetNewsId){
     let url = "http://localhost:8000/api/getNews?type=single&newsId=" + targetNewsId;
-
+    updateViewCounter(targetNewsId)
     let response = senderGet(url);
     response = JSON.parse(response);
     console.log(response);
+    if(response.status == 'error'){
+        alert(response.message);
+        return
+    }
+    workspaceclear('newsworkplace')
+    workplace.innerHTML += singleNewsTmpl.innerHTML.replace('--title',response.title)
+    .replace('--views',response.views)
+    .replace('--likes',response.likes)
+    .replace('--dislikes',response.dislikes)
+    .replace('--description',response.description)
+    .replace('--id',response.id)
+    .replace('--id',response.id)
 }
-
+function ratingChange(type,id,element){
+    //creating link get to send request to handler
+    //send request 
+    //delete review section
+    //put feedback thanks instead of buttons
+    let url = "http://localhost:8000/api/updateNews?id=" + id + "&updateType=" + type;
+    senderGet(url);
+    let targetCleaning = element.closest('#reviewSection')
+    targetCleaning.innerHTML = "<p>Thank you for review!</p>"
+}
+function updateViewCounter(id){
+ let url = "http://localhost:8000/api/updateNews?id=" + id + "&updateType=views";
+ senderGet(url);
+}
 
 
 

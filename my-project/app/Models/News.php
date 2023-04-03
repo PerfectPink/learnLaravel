@@ -1,6 +1,7 @@
 <?php
 namespace App\Models;
 
+use Illuminate\Contracts\Redis\Connector;
 use Illuminate\Support\Facades\DB;
 
 header("Access-Control-Allow-Origin: *");
@@ -33,7 +34,6 @@ class News{
                 break;
             case 'single':
                 $targetId = $_GET['newsId'];
-                $pdo->query("UPDATE news SET views = views + 1 WHERE id = $targetId");
                 $response = $pdo->query("SELECT * FROM news where id = $targetId")->fetch();
                 break;
             default:
@@ -44,5 +44,12 @@ class News{
                 break;
         }
         echo json_encode($response, JSON_UNESCAPED_UNICODE);
+    }
+    public static function updateNews(){
+        $pdo = Connection::getConnection();
+        $id = $_GET['id'];
+        $updateType = $_GET['updateType'];
+        // $query = DB::update('UPDATE news SET ? = ? + 1 WHERE id = ?', [$updateType, $updateType, $id]);
+        $pdo->query("UPDATE news SET $updateType = $updateType + 1 WHERE id = $id");
     }
 }

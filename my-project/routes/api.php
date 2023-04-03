@@ -28,6 +28,9 @@ Route::get('/test', function () {
 Route::get('/getNews', function () {
     News::getData();
 });
+Route::get('/updateNews',function(){
+    News::updateNews();
+});
 // Route::get('/news', function () {
 //     return News::getData();
 // });
